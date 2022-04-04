@@ -1,0 +1,179 @@
+,date_of_post,post_captions,types_of_post,reactions,comments,shared_count
+0,2mo •,"One week to go until our part-time 2022 courses start!
+
+Data Science: https://lnkd.in/ePFRsMgR
+
+Data Engineering:",image,88,6 ,12
+1,7h • Edited •,"Data visualisation is vital in gathering insights from our data.
+Python has various visualisation packages we can use, including Matplotlib, Seaborn and Plotly.
+
+Later this week, we will show you how to create a bar chart with these three packages.",image,14,1 ,1
+2,5d • Edited •,"If data wrangling is your thing, then make sure to work on your Pandas skills.
+
+This Pandas exercise project is very handy to guide you through the basics - .",image,50,1 ,8
+3,1w •,"Make sure not to miss out on this opportunity to hear shaun dippnall speak at this year's UmojaHack Africa, and if you have not done so already, sign up for the hackathon!",image,28,4 ,2
+4,1w •,"This week, we introduce a few of the most important Python packages a data scientist will use. NumPy is the first one.
+
+Do a few  NumPy exercises to improve your skills: .
+
+      ",image,36,2 ,5
+5,1w •,"How would you use logic trees, flowcharts and pseudocode to solve a problem? Follow our example to see how easy it is.
+
+Next, take a minute to write the Python algorithm for programmatic implementation.",image,41,1 ,2
+6,2w •,"UmojaHack Africa hackathon takes place this weekend 19-20 March! We're in collab with Zindi.
+
+Prizes to be won, connections to be made. It's not too late to sign up:",image,17,1 ,2
+7,2w •,"Comparison operators form an integral part of programming languages and are used in conditional statements.
+
+With comparison operators, two values are compared, and either a true or false statement is returned, determining the program flow.
+
+Keep an eye out for tomorrow's post - we will be sharing how to use a logic tree, flowchart and pseudocode to solve a programming problem.",image,34,2 ,8
+8,3w •,"When creating flowcharts, each symbol used has a specific meaning. Use this chart as a reference guide when designing flowcharts.",image,22,3 ,4
+9,3w •,"Pseudocode and flowcharts are excellent aids in developing programming logic. If you are new to coding, use these techniques before using computer code to solve the problem.",image,28,2 ,1
+10,1mo •,"We are proud to be sponsoring UmojaHack Africa 2022! Sign up here.
+
+This competition is the biggest inter-university ML hackathon in Africa, inspiring the next generation of tech and AI leaders. ML and AI are key for the rejuvenation of Africa’s economies, and we are proud to play a pivotal role in supporting future talent.",image,29,2 ,3
+11,3w •,"The best way to solve a problem, big or small, is to look at it in a structured way.
+
+This week, our students were introduced to problem-solving. They will continuously hone this new skill as they learn how to apply frameworks such as MECE, Agile and Scientific Method.",image,36,1 ,4
+12,2mo •,You can create visuals from basic cards to complete maps in Power BI. Our data science students are taking the time to create visuals in Power BI this week.,image,64,,1
+13,1mo •,"Notebooks are one of the most popular tools data scientists use to perform exploratory data analysis (EDA) and machine learning model development.
+
+At EXPLORE, our students use Jupyter Notebooks to gather and share insights on projects.",image,52,,1
+14,1mo •,"DAX is what makes Power BI so powerful!
+It is not only used in Power BI but also other Microsoft platforms.
+
+Our students are currently investing some time in becoming proficient with DAX.",image,72,,
+15,1mo •,"So, what's your thing?
+
+https://lnkd.in/e6BtUbQR",image,,,
+16,1mo •,"The data from 2021 shows that Python is the most popular programming language.
+
+At EXPLORE, our students learn to solve problems using this programming language. 
+
+To have a look at the data yourself, download it here -",image,,,
+17,1mo • Edited •,"You have the option to choose between a Data Science and Data Engineering course.
+
+Select your course of choice and enrol today.
+
+
+
+     ",image,,,
+18,2mo •,There is just more than a week remaining to enrol for our Data Science course starting on the 17th of January. It will be the best decision you make this year.,image,,,
+19,2mo •,"Now that you know how to use data in Power BI, where can you access open data?
+
+GitHub - https://lnkd.in/ekUW3Rd
+The World Bank -
+-
+Kaggle -",image,,,
+20,2mo •,"Want to join our team in creating amazing content?
+
+Senior Data Science Content Creator - https://lnkd.in/g2Uv7T8M
+
+Senior Date Engineering Content Creator -",image,,,
+21,2mo •,"Our students have moved on to learning the next problem-solving tool, a programming language.
+
+Over the next six weeks, our posts will focus on our programming language of choice.",image,,,
+22,1mo •,"In Power BI Desktop, you have the functionality to create new features by using DAX. What is the difference between creating a feature as a column vs a measure?
+
+Also, check out this comprehensive DAX guide we shared last year: .",image,,,
+23,1mo •,"Our students are learning how to use Power BI to create data visualisations. There are numerous reasons why we have selected Power BI as our dashboard tool of choice.
+
+Keep following our posts this week to learn more about Power BI.",image,,,
+24,1mo • Edited •,"DAX or Data Analysis Expressions is a powerful query language that we can use to perform data manipulation and is commonly used in Power BI. Due to its data manipulation power, it is popular amongst Data Analysts and Data Scientists.
+
+has put together this very comprehensive guide on DAX functions. Keep this one close by for your next Power BI project.",image,,,
+25,1mo • Edited •,"How do you know if the data plot should be a bar graph or a histogram?
+
+The answer depends on the type of data you are working with. Paying attention to categorical or numerical data will guide you in choosing the correct visuals.",youtube video,,,
+26,2mo • Edited •,"This week our students are focusing on data visualisation.
+
+The insights gathered from data can be used to tell a story. An important aspect of a data scientist's role is communicating these insights.",youtube video,,,
+27,9mo •,"EXPLORE is looking for a few talented individuals to join the content creation team. Have a look at the job specifications for each role on the attached PDF:
+
+1) Senior Data Science Content Creator (page 1 - 2)
+2) Data Science Content Creator (page 3 - 4)
+3) Motion Graphic Designer (page 5 - 6)",youtube video,,,
+28,2mo •,"Cloud computing is one of the most in-demand tech skills.
+Explore Data Science Academy, in partnership with AWS, ensures that our students gain the must-have knowledge and practical experience in cloud computing.
+
+Listen to this podcast to hear more from (Head of Solution Architecture at AWS) and (CEO & Co-founder of EDSA). -
+
+Join one of our courses before Monday, the 17th of January, to learn this valuable skill.
+
+Data Science -
+Data Engineering -",youtube video,,,
+29,2mo •,"In 2020, Python was the most popular data science programming language. So if you want to learn data science, a good first step would be to learn Python.
+
+Here is an excellent cheat sheet on Python by Real Python to get you started.",youtube video,,,
+30,10mo •,"Watch our latest video that shares what we do:
+
+https://lnkd.in/dV6YrmRU",linked video,,,
+31,2mo • Edited •,"Welcome to all the students who enrolled for our January 2022 intake. Enjoy the journey with us!
+
+Over the next few months, we will be posting weekly sneak peeks of what our students are learning. Don't forget to check in on these.",linked video,,,
+32,10mo •,"The next cheat sheet covers Linear Algebra Basics.
+Have fun revising these important concepts.
+
+
+
+Cheat Sheet designed by Laurent Lessard, University of Wisconsin–Madison",linked video,,,
+33,3mo •,"New to the data science field and want to add some projects to your portfolio?
+
+Data Flair provides a list of sixteen different projects from beginners to advanced.
+Why not plan to do one or two of these over the upcoming holidays?",linked video,,,
+34,2mo •,"Machine learning pipelines are vital to automating the machine learning workflow, from data collection to deploying the model into production. There are numerous machine learning orchestration tools. This article introduces some of the best tools to use for MlOps pipeline orchestration.",linked video,,,
+35,1yr • Edited •,"See how we're innovating to help find then fund the brightest data science talent and help them find global, $-based tech jobs.",a pdf file,,,
+36,4mo •,"If you ever wanted a machine learning crash course in one article, then this is the one to bookmark: https://lnkd.in/g8VKRBj9",a pdf file,,,
+37,5mo •,During the month of May we have posted quite a few resources related to Neural Networks. Today we would like to share a piece of content we have created in-house on Training the Neural Network. Please have a look at the following video and let us know what you think.,a pdf file,,,
+38,8mo •,"Earlier this week, we shared exciting news about our partnership with Amazon Web Services (AWS). Now you can hear some of our previous students' experiences and how our training program has changed their lives.",a pdf file,,,
+39,7mo •,Do you want to transition to a career in Data Science but not sure if it is possible? This article outlines how you can transition into Data Science from eight different backgrounds.,a pdf file,,,
+40,8mo •,"Are you interested in learning Data Science but not sure where to start?
+
+This article contains a list of free resources broken up into different skills:
+
+Have a look and start your Data Science journey today.",a pdf file,,,
+41,10mo •,Want to hear what previous Explore Data Science Academy graduates have to say about their experience?,Not a formal post,,,
+42,1yr • Edited •,"Really proud of our partnership with AWS.
+
+https://lnkd.in/e4v3BHj",,,,
+43,11mo •,"You can listen to the part on Explore Data Science Academy here for those who missed the broadcast on Friday evening.
+
+(Part I)",,,,
+44,11mo •,EXPLORE continues to work with AWS with students emerging into the world of work with great cloud computing skills,,,,
+45,1yr •,"Data storytelling takes data from a neutral form in a database and turns it into meaningful insights. These insights are then, in turn, used to make important business decisions. Data visualisations tools are essential to this process. This article discusses data visualisation and free data visualisation tools.",,,,
+46,1yr •,"Cloud giant Amazon Web Services (AWS) has teamed up with Explore Data Science Academy to lead this charge through investing in education, training, and certification programs for young South African data scientists to upskill future data scientists with the skills of the future.",,,,
+47,11mo •,"What is Big O Notation?
+
+Big O Notation is a mathematical notation that describes how an algorithm behaves when the argument tends towards a specific value - focusing on the limiting behaviour.
+
+Have a look at this article for more information on Big O Notation and how to implement with guiding exercises -",,,,
+48,1yr • Edited •,"Data scientists use notebooks to explore data insights. Often they would like to share these insights, but without sharing the file.
+
+The simplest solution is to deploy the notebook as an interactive dashboard, and that is where Voilà comes in. Voilà turns your Jupyter notebook into a web application.
+
+Have a look at this gallery to see a few examples -
+
+Voilà implementation -",,,,
+49,1yr •,Explore Data Science Academy is looking for some talent to join the team. Please share this amazing opportunity.,,,,
+50,1yr •,"This website (https://lnkd.in/ebJR93x), by Afshine Amidi and Shervine Amidi, provides cheat sheets on the various branches of machine learning in an easily understandable format.
+
+Go and have a look, especially the one on tips and tricks. This image is referenced from there.",,,,
+51,6mo •,"If you are new to machine learning, this is an amazing article to read. It outlines different machine learning algorithms and explains when or where to use each model.
+
+
+
+Image credit to the author of the article referenced.",,,,
+52,6mo • Edited •,"Explore Data Science Academy will be part of the broadcast this coming Friday, 30 April, at 21h30 on eNCA.",,,,
+53,10mo •,"Exploratory Data Analysis can be cross-classified in two ways.
+Look at this visual to note the four types of EDA we can perform on our data.
+Non-Graphical EDA relates to summary statistics and Graphical EDA to visualisations. Univariate refers to one variable at a time and Multivariate to two or more variables.",,,,
+54,10mo • Edited •,"BecomingHuman.AI has put together this comprehensive resource of downloadable cheat sheets for AI, Neural Networks, Machine Learning, Deep Learning & Data Science.
+
+Here is the one on Neural Networks.
+Cheat sheets on the other topics can be found here:",,,,
+55,11mo •,,,,,
+56,11mo • Edited •,,,,,
+57,11mo •,,,,,
+58,1yr •,,,,,
+59,1yr •,,,,,
