@@ -6,7 +6,7 @@ name: Linkedin Web Scraping
 # or API.
 on:
   schedule:
-    - cron: "0 4 * * *"
+    - cron: "23 1 * * *"
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
