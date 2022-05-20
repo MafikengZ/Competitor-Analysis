@@ -1,0 +1,38 @@
+# This is a basic workflow that is manually triggered
+
+name: Linkedin Web Scraping
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Automating our scraping script'
+        # Default value if no value is explicitly provided
+        default: 'Web scraping automated'
+        # Input has to be provided for the workflow to run
+        required: true
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "greet"
+  linkedin_scrape:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners shell
+    - name: Checkout repo
+      uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2.0.0
+      with:
+          python-version: '3.7'
+    - name: Run Scraper
+      run: python linkedin_scrapper.ipynb
