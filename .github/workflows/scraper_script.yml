@@ -36,3 +36,17 @@ jobs:
           python-version: '3.7'
     - name: Run Scraper
       run: python linkedin_scrapper.ipynb
+    - name: Run Scraper
+      run: YouTubeChannel_Data.ipynb
+    - name: Run Scraper
+      run: YouTubeChannel_Data.ipynb
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
