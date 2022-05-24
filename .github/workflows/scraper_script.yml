@@ -37,9 +37,9 @@ jobs:
     - name: Run Scraper
       run: python linkedin_scrapper.ipynb
     - name: Run Scraper
-      run: YouTubeChannel_Data.ipynb
+      run: python YouTubeChannel_Data.ipynb
     - name: Run Scraper
-      run: YouTubeChannel_Data.ipynb
+      run: python Twitter_scrapping_and_cleaning.ipynb
       
       
       
