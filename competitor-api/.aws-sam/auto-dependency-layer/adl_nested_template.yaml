@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: AWS SAM CLI Nested Stack for Auto Dependency Layer Creation
+Metadata:
+  SamCliInfo: 1.52.0
+  key: AWS SAM CLI sync command
+Outputs:
+  HelloWorldFunction19d43fc4DepLayer:
+    Value:
+      Ref: HelloWorldFunction19d43fc4DepLayer
+Resources:
+  HelloWorldFunction19d43fc4DepLayer:
+    Metadata:
+      CreatedBy: AWS SAM CLI sync command
+    Properties:
+      CompatibleRuntimes:
+      - python3.8
+      ContentUri: /home/nano-ai/Desktop/competitor-api/competitor-analysis/.aws-sam/auto-dependency-layer/HelloWorldFunction19d43fc4DepLayer
+      Description: Auto created layer for dependencies of function HelloWorldFunction
+      LayerName: competitor-appdc96b50a-HelloWorldFunction19d43fc4-DepLayer
+      RetentionPolicy: Delete
+    Type: AWS::Serverless::LayerVersion
+Transform: AWS::Serverless-2016-10-31

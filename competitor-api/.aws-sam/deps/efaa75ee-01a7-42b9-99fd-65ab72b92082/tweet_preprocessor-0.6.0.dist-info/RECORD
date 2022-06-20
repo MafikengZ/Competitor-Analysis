@@ -1,0 +1,16 @@
+preprocessor/__init__.py,sha256=sHHD8qfcG-ycIKrXsCzZSIMkU2Bv55AfU3TwxOE4DWE,942
+preprocessor/api.py,sha256=KdabQFW9NnNo6Eym7lQfXNnPGG6rmE7lXJgy6CUuQVY,3375
+preprocessor/defines.py,sha256=yv9nnu_SX0jKKFCV1eFkfziOCDMOugtjDFq1z37THKw,3958
+preprocessor/enum.py,sha256=I7Eu2QSK2-XQW3PGbH8oMND4ZBFFQXxBUP4YCudty3k,263
+preprocessor/parse.py,sha256=8hbVnvKi_SW22TqdjPBkro2j__6LnFrJ1NRFx7-ep2Q,2581
+preprocessor/preprocess.py,sha256=VfwcKzH_9nDfGbtDY6MwOUMnz0eB3QhdIDQDXAJAonE,2690
+preprocessor/utils.py,sha256=jJ2o8bYik2B3IdJCTaB7XZS5zfEpAkuAtHE5RWGBzDk,7284
+tests/__init__.py,sha256=U53KHbT_8YKFsZR2DsF5nfeG08LrZ-qmy5fCLm1F4FU,40
+tests/test_api.py,sha256=x4sNlqUkfGVbKqt651eKBr2--QSClcaPa2WA77qvbXk,6198
+tests/test_clean_numbers.py,sha256=mvmM4eKrzxeQW9zBReCJXSF05or9bfHVrMeva9VOi5w,2262
+tests/test_utils.py,sha256=DPRkk-AZoGu8w30gAALhM6EvMXT-S60W84nFliTlkm4,5790
+tweet_preprocessor-0.6.0.dist-info/LICENSE.md,sha256=WJ7YI-moTFb-uVrFjnzzhGJrnL9P2iqQe8NuED3hutI,35141
+tweet_preprocessor-0.6.0.dist-info/METADATA,sha256=WHcVuMAarH7l9s9VUq7mPYx7-j9pHaVXG5RHEwQxaC8,5887
+tweet_preprocessor-0.6.0.dist-info/WHEEL,sha256=g4nMs7d-Xl9-xC9XovUrsDHGXt-FT0E17Yqo92DEfvY,92
+tweet_preprocessor-0.6.0.dist-info/top_level.txt,sha256=T5R8mUP9trwfDg1eG5zl4RQh4uHLN82JbGq5iHuyIR4,19
+tweet_preprocessor-0.6.0.dist-info/RECORD,,
