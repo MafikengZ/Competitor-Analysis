@@ -13,8 +13,7 @@ def _load_twitter_data(usernames):
 	'''
     Func scrape data using snscraper & load dataset 
         usernames:list of competitors
-        return: 
-            competitors: list of collected competitors data
+        return:list of collected competitors data
     '''
 	tweets = []
 	for n, k in enumerate(usernames):
@@ -46,11 +45,10 @@ def _load_twitter_data(usernames):
 def _tweet_preprocessor(data):
 	'''
 	Func clean tweet using tweet-preprocessor
-	data: Pandas Dataframe
-	return:
-		tweets: Dataframe of cleaned tweets
+		data: Pandas Dataframe
+		return:Dataframe of cleaned tweets
 	'''
-    tweets = data['Text']
+	tweets = data['Text']
     tweets= p.clean(tweets)
     return tweets
 
@@ -77,9 +75,8 @@ def _preprocess_dataset(data):
 def _store_dataset(data):
 	'''
     Func convert pandas dataframe to csv file & push file to S3 Bucket
-    data: Pandas Dataframe
-    return:
-        output: Dict indicating metadata
+		data: Pandas Dataframe
+		return: Dict indicating metadata
     '''
 	client = boto3.client('s3')
 	IObuffer = StringIO()
