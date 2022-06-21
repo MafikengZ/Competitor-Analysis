@@ -18,10 +18,10 @@ if __name__ == '__main__':
 		
 		'''
 		#facebook
-		facebook = _load_facebook_data(usernames)
-		facebook = facebook.apply(_preprocess_dataset)
-		output1 = facebook.apply(_store_dataset)
-		#htwitter
+		# facebook = _load_facebook_data(usernames)
+		# facebook = facebook.apply(_preprocess_dataset)
+		# output1 = facebook.apply(_store_dataset)
+		#twitter
 		twitter = _load_twitter_data(usernames)
 		twitter['Text'] = twitter.apply(_tweet_preprocessor , axis=1)
 		twitter = twitter.apply( _preprocess_dataset , axis=1)
