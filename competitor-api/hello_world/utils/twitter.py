@@ -72,10 +72,10 @@ def _preprocess_dataset(data):
 	
 def _store_dataset(data):
 	'''
-    Func convert pandas dataframe to csv file & push file to S3 Bucket
+	 Func convert pandas dataframe to csv file & push file to S3 Bucket
 		data: Pandas Dataframe
 		return: Dict indicating metadata
-    '''
+	'''
 	client = boto3.client('s3')
 	IObuffer = StringIO()
 

@@ -11,8 +11,7 @@ def _load_facebook_data(usernames):
     '''
     Func scrape data using Facebook scraper & load dataset 
         usernames:list of competitors
-        return: 
-            competitors: list of collected competitors data from facebook
+        return:list of collected competitors data from facebook
     '''
     for username in usernames:
         page_name = username
@@ -30,8 +29,7 @@ def _store_dataset(data):
     '''
     Func convert pandas dataframe to csv file & push file to S3 Bucket
     data: Pandas Dataframe
-    return:
-        output: Dict indicating metadata
+    return: Dict indicating metadata
     '''
 	client = boto3.client('s3')
 	IObuffer = StringIO()
