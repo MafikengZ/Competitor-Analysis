@@ -21,15 +21,13 @@ def _load_twitter_data(usernames):
 			if index > 50000:
 				break
 			else:
-				tweets.append([tweet.date, tweet.content,tweet.user.username, 
-				tweet.user.followersCount,tweet.replyCount,
-				tweet.retweetCount, tweet.likeCount, tweet.quoteCount,
-				tweet.links, tweet.media, tweet.retweetedTweet, 
-				tweet.quotedTweet, tweet.hashtags])
+				 tweets.append([tweet.user.username, tweet.content,tweet.media,tweet.date, 
+                               tweet.likeCount,tweet.replyCount,tweet.retweetCount,
+                               tweet.quoteCount, tweet.hashtags , tweet.user.followersCount])
 
 	# Creating a dataframe from the tweets list above
-	data = pd.DataFrame(tweets, columns = ['Username' , 'Text' ,'Media', 'Datetime' , 'Likes' , 
-						'Replies','Retweets', 'Quotes','Hashtags', 'Followers'])
+    data = pd.DataFrame(tweets, columns = ['Username' , 'Text' ,'Media', 'Datetime' , 'Likes' , 
+                                           'Replies','Retweets', 'Quotes','Hashtags', 'Followers'])
 		                                   
 
 	data['Datetime'] = pd.to_datetime(data['Datetime'])
