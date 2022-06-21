@@ -1,4 +1,4 @@
-from utils import *
+from utils.twitter import *
 
 
 if __name__ == '__main__':
@@ -9,7 +9,7 @@ if __name__ == '__main__':
 		    'edXOnline', 'udemy', 'AfriDataSch', 
 		    'DataCamp', 'Springboard', 'wethinkcode' , 'UmuziOrg']
 
-	def lambda_handler(usernames):
+	def lambda_handler(event, context):
 		'''
 		Func calls utility functions from utils, 
 		this func is referenced by template.yaml (cloudformation)
@@ -22,10 +22,12 @@ if __name__ == '__main__':
 		# facebook = facebook.apply(_preprocess_dataset)
 		# output1 = facebook.apply(_store_dataset)
 		#twitter
-		twitter = _load_twitter_data(usernames)
-		twitter['Text'] = twitter.apply(_tweet_preprocessor , axis=1)
-		twitter = twitter.apply( _preprocess_dataset , axis=1)
-		output2 = twitter.apply(_store_dataset)
+		
+		data = load_twitter_data(users)
+		data['Text'] = data.apply(tweet_preprocessor , axis=1)
+		data = data.apply( preprocess_dataset , axis=1)
+		output = data.apply(store_dataset)
+		return output
 	
 	#function call
-	lambda_handler(users)
+	#lambda_handler(users)

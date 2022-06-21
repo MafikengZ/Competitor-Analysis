@@ -9,25 +9,24 @@ from io import StringIO
 
 
 
-def _load_twitter_data(usernames):
+def load_twitter_data(usernames):
 	'''
-    Func scrape data using snscraper & load dataset 
+    	Func scrape data using snscraper & load dataset 
         usernames:list of competitors
         return:list of collected competitors data
-    '''
+    	'''
 	tweets = []
 	for n, k in enumerate(usernames):
-		for index , tweet in enumerate(scraper.TwitterSearchScraper('from:{} since:2021-01-01'.format(usernames[n])).get_items()):
+		for index , tweet in enumerate(scraper.TwitterSearchScraper('from:{} since 2021-01-01'.format(usernames[n])).get_items()):
 			if index > 50000:
 				break
 			else:
-				 tweets.append([tweet.user.username, tweet.content,tweet.media,tweet.date, 
+				tweets.append([tweet.user.username, tweet.content,tweet.media,tweet.date, 
                                tweet.likeCount,tweet.replyCount,tweet.retweetCount,
                                tweet.quoteCount, tweet.hashtags , tweet.user.followersCount])
 
 	# Creating a dataframe from the tweets list above
-    data = pd.DataFrame(tweets, columns = ['Username' , 'Text' ,'Media', 'Datetime' , 'Likes' , 
-                                           'Replies','Retweets', 'Quotes','Hashtags', 'Followers'])
+	data = pd.DataFrame(tweets, columns = ['Username' , 'Text' ,'Media', 'Datetime' ,'Likes' , 'Replies','Retweets', 'Quotes','Hashtags', 'Followers'])
 		                                   
 
 	data['Datetime'] = pd.to_datetime(data['Datetime'])
@@ -40,18 +39,18 @@ def _load_twitter_data(usernames):
 	return data
 
 
-def _tweet_preprocessor(data):
+def tweet_preprocessor(data):
 	'''
 	Func clean tweet using tweet-preprocessor
 		data: Pandas Dataframe
 		return:Dataframe of cleaned tweets
 	'''
 	tweets = data['Text']
-    tweets= p.clean(tweets)
-    return tweets
+	tweets= p.clean(tweets)
+	return tweets
 
 
-def _preprocess_dataset(data):
+def preprocess_dataset(data):
 	data['Media'] = data['Media'].astype('string')
 	data.loc[data['Media'].str.contains('Photo'), 'Media'] = 'Photo'
 	data.loc[ data['Media'].str.contains('Vid'), 'Media'] = 'Video'
@@ -70,7 +69,7 @@ def _preprocess_dataset(data):
 	data['Hashtags'] = data['Hashtags'].str.join('')
 	return data
 	
-def _store_dataset(data):
+def store_dataset(data):
 	'''
 	 Func convert pandas dataframe to csv file & push file to S3 Bucket
 		data: Pandas Dataframe
