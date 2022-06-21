@@ -3,3 +3,4 @@ pandas==1.1.3
 numpy==1.18.5
 boto3==1.21.44
 tweet-preprocessor==0.6.0
+facebook-page-scraper==2.0.2
