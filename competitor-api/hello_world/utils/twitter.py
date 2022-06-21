@@ -86,5 +86,7 @@ def _store_dataset(data):
 
 	data.to_csv(IObuffer , header=True , index=False)
 	IObuffer.seek(0)
+	#connect to S3Bucket and update the bucket
+	#If Bucket is empty push a new csv file
 	output = client.put_object(Bucket='competitor-data-store', Body=IObuffer.getvalue() , Key='twitter/twitter.csv')
 	return output
