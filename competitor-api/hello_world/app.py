@@ -2,6 +2,7 @@ from utils.twitter import *
 import snscrape.modules.twitter as scraper
 
 
+<<<<<<< HEAD
 
 #list of key competitrs
 users = ['DataScienceDojo', 'coursera','getsmarter','HypDev',
@@ -51,3 +52,33 @@ if __name__ == '__main__':
 	
 	#function call
 	lambda_handler(data)
+=======
+#list of key competitrs
+users = ['DataScienceDojo', 'coursera','getsmarter','HypDev',
+		'simplilearn','udacity','NYCDataSci','I_T_Academy',
+		'edXOnline', 'udemy', 'AfriDataSch', 
+		'DataCamp', 'Springboard', 'wethinkcode' , 'UmuziOrg']
+
+def lambda_handler(event, context):
+	'''
+	Func calls utility functions from utils, 
+	this func is referenced by template.yaml (cloudformation)
+	
+	usernames:list of competitors
+	
+	'''
+	#facebook
+	# facebook = _load_facebook_data(usernames)
+	# facebook = facebook.apply(_preprocess_dataset)
+	# output1 = facebook.apply(_store_dataset)
+	#twitter
+	
+	data = load_twitter_data(users)
+	data['Text'] = data.apply(tweet_preprocessor , axis=1)
+	data = data.apply( preprocess_dataset , axis=1)
+	output = data.apply(store_dataset)
+	return output
+
+#function call
+#lambda_handler(users)
+>>>>>>> 7a6f0d805b53d33901c785fd5c53d6e61e4f2990
