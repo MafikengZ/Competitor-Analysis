@@ -27,7 +27,12 @@ if __name__ == '__main__':
 		data['Text'] = data.apply(tweet_preprocessor , axis=1)
 		data = data.apply( preprocess_dataset , axis=1)
 		output = data.apply(store_dataset)
-		return output
+		return {
+		"statusCode": 200,
+		"headers": {
+			"Content-Type": "application/json"},
+			"body": json.dumps({"output ": output})
+			}
 	
 	#function call
 	#lambda_handler(users)
