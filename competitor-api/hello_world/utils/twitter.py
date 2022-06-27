@@ -9,26 +9,10 @@ from io import StringIO
 
 
 
-def load_twitter_data(usernames):
-	'''
-    	Func scrape data using snscraper & load dataset 
-        usernames:list of competitors
-        return:list of collected competitors data
-    	'''
-	tweets = []
-	for n, k in enumerate(usernames):
-		for index , tweet in enumerate(scraper.TwitterSearchScraper('from:{} since 2021-01-01'.format(usernames[n])).get_items()):
-			if index > 50000:
-				break
-			else:
-				tweets.append([tweet.user.username, tweet.content,tweet.media,tweet.date, 
-                               tweet.likeCount,tweet.replyCount,tweet.retweetCount,
-                               tweet.quoteCount, tweet.hashtags , tweet.user.followersCount])
 
-	# Creating a dataframe from the tweets list above
-	data = pd.DataFrame(tweets, columns = ['Username' , 'Text' ,'Media', 'Datetime' ,'Likes' , 'Replies','Retweets', 'Quotes','Hashtags', 'Followers'])
-		                                   
 
+def preprocess_dataset(data):
+	
 	data['Datetime'] = pd.to_datetime(data['Datetime'])
 	data['Date'] = pd.to_datetime(data['Datetime']).dt.date
 	data['Hour'] = pd.to_datetime(data['Datetime']).dt.hour
@@ -36,21 +20,7 @@ def load_twitter_data(usernames):
 	data['Time'] = data['Datetime'].dt.time
 	data['Weekday'] = data['Datetime'].apply(lambda x: dt.strftime(x, '%A'))
 	data.drop(['Datetime'],axis=1, inplace=True)
-	return data
 
-
-def tweet_preprocessor(data):
-	'''
-	Func clean tweet using tweet-preprocessor
-		data: Pandas Dataframe
-		return:Dataframe of cleaned tweets
-	'''
-	tweets = data['Text']
-	tweets= p.clean(tweets)
-	return tweets
-
-
-def preprocess_dataset(data):
 	data['Media'] = data['Media'].astype('string')
 	data.loc[data['Media'].str.contains('Photo'), 'Media'] = 'Photo'
 	data.loc[ data['Media'].str.contains('Vid'), 'Media'] = 'Video'
@@ -68,6 +38,16 @@ def preprocess_dataset(data):
 	data.Media.replace(pd.NA , np.nan)
 	data['Hashtags'] = data['Hashtags'].str.join('')
 	return data
+	
+def tweet_preprocessor(data):
+	'''
+	Func clean tweet using tweet-preprocessor
+		data: Pandas Dataframe
+		return:Dataframe of cleaned tweets
+	'''
+	tweets = data['Text']
+	tweets= p.clean(tweets)
+	return tweets
 	
 def store_dataset(data):
 	'''
