@@ -217,16 +217,18 @@ def preprocess_date ():
     return date_time
 
 def store_dataset():
+    
     data = {
     "competitors": competitors,
-    "Date": posts_posted_date,
-    "Media_Type": media,
-    "Post_Caption": content,
-    "Likes_Counts": likes,
-    "Comments_Counts": posts_counted_comments,
-    "Shared_Counts" : posts_counted_shares,
-    "total_followers": followers_clean_up
+    "Date": preprocess_date(),
+    "Media": media,
+    "Contents": content,
+    "Likes": likes,
+    "Comments": preprocess_comment(),
+    "Shared" : preprocess_shared(),
+    "followers": preprocess_followers()
     }
+
     data = pd.DataFrame(data)
     client = boto3.client('s3')
 	IObuffer = StringIO()
@@ -234,6 +236,12 @@ def store_dataset():
 	data.to_csv(IObuffer , header=True , index=False)
 	IObuffer.seek(0)
 	#connect to S3Bucket and update the bucket
+    # csv_object = client.get_object(Bucket='competitor-data-store', Key='linkedin/linkedin.csv')
+    # body = csv_object['Body']
+    # csv_string = body.read().decode('utf-8')
+    # df = pd.read_csv(StringIO(csv_string))
+    
 	#If Bucket is empty push a new csv file
+
 	output = client.put_object(Bucket='competitor-data-store', Body=IObuffer.getvalue() , Key='linkedin/linkedin.csv')
 	return output
