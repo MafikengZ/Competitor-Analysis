@@ -86,15 +86,15 @@ def load_linkedin_data():
             posted_date = container.find("span",{"class":"visually-hidden"})
             text_box = container.find("div",{"class":"feed-shared-update-v2__description-wrapper"})
             text = text_box.find("span",{"dir":"ltr"})
-            post_shares = container.findAll("li", {'class':["social-details-social-counts__item--with-social-proof","social-details-social-counts__comments social-details-social-counts__item"]})
+            shares = container.findAll("li", {'class':["social-details-social-counts__item--with-social-proof","social-details-social-counts__comments social-details-social-counts__item"]})
             new_likes = container.findAll("li", {'class':["social-details-social-counts__item--with-social-proof","social-details-social-counts__item"]})
             new_comments = container.findAll("li", {"class": "social-details-social-counts__item social-details-social-counts__comments social-details-social-counts__item--with-social-proof"})
             followers = container.find("span", {"class":"feed-shared-actor__description"})
 
-            competitors_name.append(competitor.text.strip())
-            post_dates.append(posted_date.text.strip())
-            post_texts.append(text.text.strip())
-            total_followers.append(followers.text.strip())
+            competitor.append(competitor.text.strip())
+            dates.append(posted_date.text.strip())
+            content.append(text.text.strip())
+            followers.append(followers.text.strip())
 
         try:
                 video_box = container.findAll("div",{"class": "feed-shared-update-v2__content feed-shared-linkedin-video ember-view"})
@@ -125,31 +125,31 @@ def load_linkedin_data():
                                 video_box = container.findAll("div",{"class": "feed-shared-external-video__meta"})          
                                 video_link = video_box[0].find('a', href=True)
                                 media_links.append(video_link['href'])
-                                media_type.append("Youtube Video")   
+                                media.append("Video")   
                             except:
                                 try:
                                     poll_box = container.findAll("div",{"class": "feed-shared-update-v2__content overflow-hidden feed-shared-poll ember-view"})
                                     media_links.append("None")
-                                    media_type.append("Other: Poll, Shared Post, etc")
+                                    media.append("Other: Poll, Shared Post, etc")
                                 except:
                                     media_links.append("None")
-                                    media_type.append("Unknown")
+                                    media.append("Unknown")
         try:
-                post_likes.append(new_likes[0].text.strip())
+                likes.append(new_likes[0].text.strip())
             except:
-                post_likes.append(0)
+                likes.append(0)
                 pass
 
             try:
-                post_comments.append(new_comments[0].text.strip())                           
+                comments.append(new_comments[0].text.strip())                           
             except:                                                           
-                post_comments.append("0")
+                comments.append("0")
                 pass
 
             try:
-                post_shared.append(post_shares[1].text.strip())                           
+                shared.append(shares[1].text.strip())                           
             except:                                                           
-                post_shared.append("0")
+                shared.append("0")
                 pass
 
         except:
