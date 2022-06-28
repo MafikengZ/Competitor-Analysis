@@ -158,12 +158,35 @@ def load_linkedin_data():
         except:
             pass
 
+def preprocess_followers():
 
-def preprocessor (data):
     clean_followers =[]
     for i in followers:
         clean = str(i[0:-9]).replace('followers','').replace(' ', '')
         clean_followers += [clean]
+    return clean_followers
+
+def preprocess_comment():
+    clean_comments = []
+    for i in comments:
+        i.split()
+        if len(i) > 2:
+            clean_comments.append(i[0:2].strip())
+        else:
+            clean_comments.append(0)
+    return clean_comments
+
+def preprocess_shared():
+    clean_shares = []
+    for i in shared:
+        i.split()
+        if len(i) > 2:
+            clean_shares.append(i[0:2])
+        else:
+            clean_shares.append(0)
+    return clean_shares
+        
+def preprocess_date ():
 
     clean_dates = []
     for i in dates:
@@ -191,3 +214,26 @@ def preprocessor (data):
         else:
         #         posts_posted_date.append(timestamp - (int(clean_d) * 60 * 1000))
             date_time.append(now - relativedelta(minutes = 30))
+    return date_time
+
+def store_dataset():
+    data = {
+    "competitors": competitors,
+    "Date": posts_posted_date,
+    "Media_Type": media,
+    "Post_Caption": content,
+    "Likes_Counts": likes,
+    "Comments_Counts": posts_counted_comments,
+    "Shared_Counts" : posts_counted_shares,
+    "total_followers": followers_clean_up
+    }
+    data = pd.DataFrame(data)
+    client = boto3.client('s3')
+	IObuffer = StringIO()
+
+	data.to_csv(IObuffer , header=True , index=False)
+	IObuffer.seek(0)
+	#connect to S3Bucket and update the bucket
+	#If Bucket is empty push a new csv file
+	output = client.put_object(Bucket='competitor-data-store', Body=IObuffer.getvalue() , Key='linkedin/linkedin.csv')
+	return output
