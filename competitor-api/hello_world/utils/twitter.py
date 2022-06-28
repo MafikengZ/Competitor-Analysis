@@ -9,7 +9,7 @@ from io import StringIO
 
 
 
-def load_dataset(data):
+def load_twitter_data(data):
 	tweets = []
 	for n, k in enumerate(users):
 		for index , tweet in enumerate(scraper.TwitterSearchScraper('from:{} since 2021-01-01'.format(users[n])).get_items()):

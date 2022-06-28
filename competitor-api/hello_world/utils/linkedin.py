@@ -168,26 +168,26 @@ def preprocessor (data):
     clean_dates = []
     for i in dates:
         clean = str(i[0:3]).replace('\n\n', '').replace('•','').replace(' ', '')
-        clean_dates += [d]
+        clean_dates += [i]
 
     date_time = []
     for date in clean_dates:
         date.split()
         if date[-1] == "h":
-            t_hour = int(clean_d[0])
-            posts_posted_date.append(now - relativedelta(hours = t_hour))
-        elif clean_d[-1] == "d":
-            t_day = datetime.timedelta(days = int(clean_d[0]))
-            posts_posted_date.append(now - t_day)
-        elif clean_d[-1] == "w":
-            t_week = datetime.timedelta(days = int(clean_d[0]) * 7)
-            posts_posted_date.append(now - t_week)
-        elif clean_d[-1] == "m":
-            t_month = int(clean_d[0])
-            posts_posted_date.append(now - relativedelta(months = t_month))
-        elif clean_d == "y":
-            t_year = int(clean_d[0])
-            posts_posted_date.append(now - relativedelta(years = t_year))
+            hour = int(date[0])
+            date.append(now - relativedelta(hours = hour))
+        elif date[-1] == "d":
+            day = datetime.timedelta(days = int(date[0]))
+            date_time.append(now - day)
+        elif date[-1] == "w":
+            week = datetime.timedelta(days = int(date[0]) * 7)
+            date_time.append(now - week)
+        elif date[-1] == "m":
+            month = int(date[0])
+            date_time.append(now - relativedelta(months = month))
+        elif date == "y":
+            year = int(date[0])
+            date_time.append(now - relativedelta(years = year))
         else:
         #         posts_posted_date.append(timestamp - (int(clean_d) * 60 * 1000))
-            posts_posted_date.append(now - relativedelta(minutes= 30))
+            date_time.append(now - relativedelta(minutes = 30))
