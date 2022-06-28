@@ -9,7 +9,21 @@ from io import StringIO
 
 
 
-
+def load_dataset(data):
+	tweets = []
+	for n, k in enumerate(users):
+		for index , tweet in enumerate(scraper.TwitterSearchScraper('from:{} since 2021-01-01'.format(users[n])).get_items()):
+			if index > 60000:
+				break
+			
+			tweets.append([tweet.user.username, tweet.content,tweet.media,tweet.date, 
+            	tweet.likeCount,tweet.replyCount,tweet.retweetCount,
+             	tweet.quoteCount, tweet.hashtags , tweet.user.followersCount])
+        	# Creating a dataframe from the tweets list above
+	data = pd.DataFrame(tweets, columns = ['Username' , 'Text' ,'Media', 
+					'Datetime' ,'Likes' , 'Replies','Retweets',
+					 'Quotes','Hashtags', 'Followers'])
+	return data
 
 def preprocess_dataset(data):
 	
