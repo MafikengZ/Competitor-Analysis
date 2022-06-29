@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
 
 
 import snscrape.modules.twitter as scraper
@@ -47,7 +46,7 @@ data.loc[ data['Media'].str.contains('Vid'), 'Media'] = 'Video'
 data.loc[ data['Media'].str.contains('Git'), 'Media'] = 'Link' #links or Githubs
 data.loc[ data['Media'].str.contains('Gif'), 'Media'] = 'Gif'
 data['Media'].fillna('Tweet', inplace=True)
-data['Text'] = data.apply(_tweet_preprocessor , axis=1)
+data['Text'] = data.apply(tweet_preprocessor , axis=1)
 # Removing Digits and lower the text (makes it easy to deal with)
 data['Text'] = data['Text'].astype(str).str.replace('\d+', '')
 # lower_text = data['Text'] .str.lower()
@@ -69,8 +68,6 @@ IObuffer.seek(0)
 output = client.put_object(Bucket='competitor-data-store', Body=IObuffer.getvalue() , Key='twitter/twitter.csv')
 output
 
-
-# In[ ]:
 
 
 
