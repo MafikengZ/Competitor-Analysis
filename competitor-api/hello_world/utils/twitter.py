@@ -30,20 +30,6 @@ def load_twitter_data(usernames):
 					 'Quotes','Hashtags', 'Followers'])
 	return data
 
-	# Creating a dataframe from the tweets list above
-	data = pd.DataFrame(tweets, columns = ['Username' , 'Text' ,'Media', 'Datetime' , 'Likes' ,
-	 'Replies','Retweets', 'Quotes','Hashtags', 'Followers'])
-		                                   
-
-	data['Datetime'] = pd.to_datetime(data['Datetime'])
-	data['Date'] = pd.to_datetime(data['Datetime']).dt.date
-	data['Hour'] = pd.to_datetime(data['Datetime']).dt.hour
-
-	data['Time'] = data['Datetime'].dt.time
-	data['Weekday'] = data['Datetime'].apply(lambda x: dt.strftime(x, '%A'))
-	data.drop(['Datetime'],axis=1, inplace=True)
-
-
 def tweet_preprocessor(data):
 	'''
 	Func clean tweet using tweet-preprocessor
@@ -74,15 +60,6 @@ def preprocess_dataset(data):
 	data['Hashtags'] = data['Hashtags'].str.join('')
 	return data
 	
-def store_dataset(data):
-	'''
-	Func clean tweet using tweet-preprocessor
-		data: Pandas Dataframe
-		return:Dataframe of cleaned tweets
-	'''
-	tweets = data['Text']
-	tweets= p.clean(tweets)
-	return tweets
 	
 def store_dataset(data):
 	'''
