@@ -9,7 +9,12 @@ from io import StringIO
 
 
 
-def load_twitter_data(data):
+def load_twitter_data(usernames):
+	'''
+    Func scrape data using snscraper & load dataset 
+        usernames:list of competitors
+        return:list of collected competitors data
+    '''
 	tweets = []
 	for n, k in enumerate(users):
 		for index , tweet in enumerate(scraper.TwitterSearchScraper('from:{} since 2021-01-01'.format(users[n])).get_items()):
@@ -25,8 +30,11 @@ def load_twitter_data(data):
 					 'Quotes','Hashtags', 'Followers'])
 	return data
 
-def preprocess_dataset(data):
-	
+	# Creating a dataframe from the tweets list above
+	data = pd.DataFrame(tweets, columns = ['Username' , 'Text' ,'Media', 'Datetime' , 'Likes' ,
+	 'Replies','Retweets', 'Quotes','Hashtags', 'Followers'])
+		                                   
+
 	data['Datetime'] = pd.to_datetime(data['Datetime'])
 	data['Date'] = pd.to_datetime(data['Datetime']).dt.date
 	data['Hour'] = pd.to_datetime(data['Datetime']).dt.hour
@@ -35,6 +43,19 @@ def preprocess_dataset(data):
 	data['Weekday'] = data['Datetime'].apply(lambda x: dt.strftime(x, '%A'))
 	data.drop(['Datetime'],axis=1, inplace=True)
 
+
+def tweet_preprocessor(data):
+	'''
+	Func clean tweet using tweet-preprocessor
+		data: Pandas Dataframe
+		return:Dataframe of cleaned tweets
+	'''
+	tweets = data['Text']
+    tweets= p.clean(tweets)
+    return tweets
+
+
+def preprocess_dataset(data):
 	data['Media'] = data['Media'].astype('string')
 	data.loc[data['Media'].str.contains('Photo'), 'Media'] = 'Photo'
 	data.loc[ data['Media'].str.contains('Vid'), 'Media'] = 'Video'
@@ -53,7 +74,7 @@ def preprocess_dataset(data):
 	data['Hashtags'] = data['Hashtags'].str.join('')
 	return data
 	
-def tweet_preprocessor(data):
+def store_dataset(data):
 	'''
 	Func clean tweet using tweet-preprocessor
 		data: Pandas Dataframe
